@@ -1,2 +1,7 @@
 run.config:
   engine: nodejs
+  
+  
+  web.main:
+   start:
+     node: npm start
