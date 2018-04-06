@@ -1,0 +1,131 @@
+@import "../../../styles/mixins";
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
+
+body {
+  font-family: 'Oswald', sans-serif;
+}
+section {
+  width: 100%;
+  height: 100%;
+  background: url('/assets/svg/blur.jpg') no-repeat center;
+  background-size: cover;
+  .mat-card {
+    width: 600px;
+    padding: 20px 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    @media screen and (max-width: 600px){
+      width: 200px;
+    }
+  }
+}
+.registration-form-wrapper p {
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 35px;
+}
+.registration-form-wrapper input{
+  border: none;
+  box-shadow: 0px 2px 3px -1px #0a84ff;
+  margin: 2px 5px;
+}
+.registration-form-wrapper input:active,
+.registration-form-wrapper input:focus{
+  border: none;
+  box-shadow: 0px 2px 5px -1px #0a84ff;
+  margin: 2px 5px;
+  outline: none;
+}
+.registration-form-wrapper select{
+  border: none;
+  box-shadow: 0px 2px 3px -1px #0a84ff;
+  margin: 2px 5px;
+}
+.registration-form h6 {
+  font-size: 22px;
+  margin-top: 30px;
+  font-family: 'Oswald', sans-serif;
+}
+.form-text p {
+  font-size: 16px !important;
+  line-height: 50px !important;
+}
+.form-text imput {
+  margin: 2px 3px;
+  width: 35%;
+}
+.form-text imput:focus {
+  margin: 2px 3px;
+}
+.answer-feild {
+  width: 70% !important;
+}
+.partner-text {
+  border-top: 4px double #000;
+  border-bottom: 4px double #000;
+  font-size: 40px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
+.signup-grid {
+  padding: 60px 50px 40px !important;
+}
+.signup-ques {
+  width: 60% !important;
+}
+.social-signup-btns {
+  padding-left: 0;
+}
+.social-signup-btns li {
+  display: inline-block;
+}
+.email {
+  padding: 3px 15px 3px 60px;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+.btn-google-login {
+  position: relative;
+  background: #de4931;
+  color: #fff;
+  border: 1px solid #de4931;
+  box-shadow: 0 3px 0 #c6422d;
+  padding: 3px 15px 3px 60px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+.google-button {
+  background: #fff;
+  position: absolute;
+  top: 1px;
+  padding: 4px 7px;
+  left: 1px;
+  height: 32px;
+  border-radius: 3px;
+}
+.facebook {
+    background: #3b5a9a;
+    color: #fff;
+    border: 1px solid #3b5a9a;
+    box-shadow: 0 3px 0 #365089;
+    padding: 3px 15px 3px 60px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.twitter {
+  background: #47bbe2;
+  color: #fff;
+  border: 1px solid #47bbe2;
+  box-shadow: 0 3px 0 #40a8cb;
+  padding: 3px 15px 3px 60px;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+
+

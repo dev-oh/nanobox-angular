@@ -1,0 +1,386 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [mode]="sidenavMode" [opened]="sideNavOpened" class="left-sidenav"
+              (open)="resizeService.resizeInformer$.next()" (close)="resizeService.resizeInformer$.next()">
+    <header class="sidenav-header" fxLayout="row" fxLayoutAlign="space-between center">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>clear</mat-icon>
+      </button>
+      <div fxFlex class="text-center pad-right-xl">
+        <a href="/">
+          <img *ngIf="darkTheme; else darkLogo" class="sidebar-logo" src="assets/svg/logo.svg">
+          <ng-template #darkLogo>
+            <img src="/assets/logo/logo-text-black.png">
+          </ng-template>
+        </a>
+      </div>
+    </header>
+    <perfect-scrollbar class="perfect-scrollbar">
+      <px-gdn-sidemenu>
+        <!--<px-gdn-sideitem title="Dashboard" [routerLinkUrl]="'dashboard'">
+          <mat-icon>dashboard</mat-icon>
+        </px-gdn-sideitem>-->
+
+        <px-gdn-sideitem title="Home" >
+          <mat-icon>web_asset</mat-icon>
+          <px-gdn-sideitem title="Dashboard" [routerLinkUrl]="'dashboard'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Stream" [routerLinkUrl]="'stream'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Team" [routerLinkUrl]="'team'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Company" [routerLinkUrl]="'company'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+        </px-gdn-sideitem>
+
+        <px-gdn-sideitem title="Wines">
+          <mat-icon>view_module</mat-icon>
+          <px-gdn-sideitem title="Manage" [routerLinkUrl]="'manage-wine'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Location" [routerLinkUrl]="'location'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Price" [routerLinkUrl]="'price'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Tag" [routerLinkUrl]="'tag'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+        </px-gdn-sideitem>
+
+        <px-gdn-sideitem title="Promotions">
+          <mat-icon>view_list</mat-icon>
+          <px-gdn-sideitem title="Dashboard" [routerLinkUrl]="'dashboard'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Campaigns" [routerLinkUrl]="'campaigns'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Offers" [routerLinkUrl]="'offers'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Parlay" [routerLinkUrl]="'parlay'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+        </px-gdn-sideitem>
+
+        <px-gdn-sideitem title="Community">
+          <mat-icon>format_align_left</mat-icon>
+          <px-gdn-sideitem title="Our Stream" [routerLinkUrl]="'our-stream'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Followers" [routerLinkUrl]="'followers'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Discover" [routerLinkUrl]="'discover'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+        </px-gdn-sideitem>
+
+        <px-gdn-sideitem title="News" (click)="optionsnav.toggle()">
+          <mat-icon>settings</mat-icon>
+        </px-gdn-sideitem>
+
+        <!--<px-gdn-sideitem title="Extra">
+          <mat-icon>extension</mat-icon>
+          <px-gdn-sideitem title="Tree" [routerLinkUrl]="'tree'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Editor" [routerLinkUrl]="'editor'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Table" [routerLinkUrl]="'table'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Scroll" [routerLinkUrl]="'scroll'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Drag and Drop" [routerLinkUrl]="'drag'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Datepicker" [routerLinkUrl]="'datepicker'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="File upload" [routerLinkUrl]="'fileupload'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Stepper" [routerLinkUrl]="'stepper'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Multi language" [routerLinkUrl]="'multi-language'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+        </px-gdn-sideitem>-->
+
+        <px-gdn-sideitem title="Charts">
+          <mat-icon>insert_chart</mat-icon>
+          <px-gdn-sideitem title="Linechart" [routerLinkUrl]="'line-chart'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Barchart" [routerLinkUrl]="'bar-chart'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Bubblechart" [routerLinkUrl]="'bubble-chart'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Heatmap" [routerLinkUrl]="'heatmap'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Piechart" [routerLinkUrl]="'piechart'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Radar" [routerLinkUrl]="'radar'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+        </px-gdn-sideitem>
+
+        <!--<px-gdn-sideitem title="Custom pages">
+          <mat-icon>account_box</mat-icon>
+          <px-gdn-sideitem title="Not Found Page" [routerLinkUrl]="'/404'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Login" [routerLinkUrl]="'/login'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Sign Up" [routerLinkUrl]="'/sign-up'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Chat" [routerLinkUrl]="'chat'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Testimonials" [routerLinkUrl]="'testimonials'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Portfolio" [routerLinkUrl]="'portfolio'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+        </px-gdn-sideitem>-->
+
+
+        <!--<px-gdn-sideitem title="E-commerce">
+          <mat-icon>shopping_cart</mat-icon>
+          <px-gdn-sideitem title="Pricing Tables" [routerLinkUrl]="'pricing-tables'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Products" [routerLinkUrl]="'products'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Product page" [routerLinkUrl]="'product'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Shopping Cart" [routerLinkUrl]="'cart'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+        </px-gdn-sideitem>-->
+
+        <!--<px-gdn-sideitem title="Maps">
+          <mat-icon>location_on</mat-icon>
+          <px-gdn-sideitem title="Google Maps" [routerLinkUrl]="'google-maps'">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+        </px-gdn-sideitem>-->
+
+        <!--<px-gdn-sideitem title="Multilevel">
+          <px-gdn-sideitem title="Level 1.1">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Level 1.2">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+            <px-gdn-sideitem title="Level 1.2.1">
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </px-gdn-sideitem>
+            <px-gdn-sideitem title="Level 1.2.2">
+              <mat-icon>keyboard_arrow_right</mat-icon>
+              <px-gdn-sideitem title="Level 1.2.2.1">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+              </px-gdn-sideitem>
+              <px-gdn-sideitem title="Level 1.2.2.2">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+              </px-gdn-sideitem>
+              <px-gdn-sideitem title="Level 1.2.2.3">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+              </px-gdn-sideitem>
+            </px-gdn-sideitem>
+            <px-gdn-sideitem title="Level 1.2.3">
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </px-gdn-sideitem>
+          </px-gdn-sideitem>
+          <px-gdn-sideitem title="Level 1.3">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </px-gdn-sideitem>
+        </px-gdn-sideitem>-->
+
+        <!--<px-gdn-sideitem title="Primary">
+          <td-notification-count color="primary" [notifications]="3"></td-notification-count>
+          <mat-icon color="primary">star</mat-icon>
+        </px-gdn-sideitem>-->
+
+        <!--<px-gdn-sideitem title="Accent">
+          <td-notification-count color="accent" [notifications]="100"></td-notification-count>
+          <mat-icon color="accent">star</mat-icon>
+        </px-gdn-sideitem>-->
+
+        <!--<px-gdn-sideitem title="Warn">
+          <td-notification-count color="warn" [notifications]="true"></td-notification-count>
+          <mat-icon color="warn">star</mat-icon>
+        </px-gdn-sideitem>-->
+      </px-gdn-sidemenu>
+    </perfect-scrollbar>
+    <footer class="secondary-text-color">
+      <mat-divider></mat-divider>
+      <p>Wine-oh! © All Rights Reserved</p>
+    </footer>
+  </mat-sidenav>
+  <mat-sidenav #optionsnav mode="over" align="end">
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons sidebar-icons">star</i> Featured Article
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons sidebar-icons">reorder</i>  Another Article
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons sidebar-icons">reorder</i> Another Article
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons sidebar-icons">reorder</i>  Another Article
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons sidebar-icons">reorder</i>  Another Article
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons sidebar-icons">reorder</i>  Another Article
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </mat-sidenav>
+
+  <mat-toolbar color="primary" class="dashboard-navbar">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a fxHide="true" fxHide.gt-sm="false" href="/" class="logo wine-logo">
+      <img class="dashboard-logo" src="assets/svg/logo.svg"> <p class="logo-text">wine-oh!</p>
+    </a>
+    <span fxFlex></span>
+    <td-search-box [alwaysVisible]="false" fxHide="true" fxHide.gt-sm="false"></td-search-box>
+    <button mat-icon-button [matMenuTriggerFor]="lettersMenu">
+      <td-notification-count [notifications]="3">
+        <mat-icon>mail</mat-icon>
+      </td-notification-count>
+    </button>
+    <mat-menu #lettersMenu="matMenu">
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let message of messages">
+          <img mat-list-avatar [src]="message.image">
+          <h4 matLine fxLayoutAlign="space-between">
+            <span>{{message.subject}}</span>
+            <span class="mat-caption">{{message.time}}</span>
+          </h4>
+          <p matLine>
+            <span>{{message.message}}</span>
+          </p>
+        </a>
+      </mat-nav-list>
+      <div class="text-center">
+        <button mat-button>View all</button>
+      </div>
+    </mat-menu>
+    <img src="assets/avatars/4040.png" class="cursor-pointer push-left-sm" [matMenuTriggerFor]="userMenu">
+    <mat-menu #userMenu="matMenu">
+      <mat-list>
+        <mat-list-item>
+          <img mat-list-avatar src="assets/avatars/4040.png">
+          <h4 matLine> Olivia Werner </h4>
+          <p matLine>
+            <span>Admin</span>
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+      <mat-nav-list>
+        <a mat-list-item>
+          <h4 matLine>View Profile</h4>
+        </a>
+        <a mat-list-item>
+          <h4 matLine>Password</h4>
+        </a>
+        <a mat-list-item>
+          <h4 matLine>Sign out</h4>
+        </a>
+      </mat-nav-list>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="settingsMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #settingsMenu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        Settings
+      </button>
+      <button mat-menu-item>
+        <mat-icon>language</mat-icon>
+        Language
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        Notifications
+      </button>
+      <button mat-menu-item>
+        <mat-icon>share</mat-icon>
+        Share
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>power_settings_new</mat-icon>
+        Logout
+      </button>
+    </mat-menu>
+
+  </mat-toolbar>
+  <div class="wrapper" [class.wrapper-box]="boxedLayout">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

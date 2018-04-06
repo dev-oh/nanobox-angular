@@ -1,0 +1,29 @@
+<div class="col-sm-6 col-sm-offset-3">
+  <form (submit)="register(newUser)" class="form" autocomplete="on">
+    <input class="form-control" type="text" placeholder="First Name" name="firstName" [(ngModel)]="newUser.firstName" required>
+    <input class="form-control" type="text" placeholder="Last Name" name="lastName" [(ngModel)]="newUser.lastName" required>
+    <input class="form-control" type="text" placeholder="Company" name="company" [(ngModel)]="newUser.contactType" required>
+    <select class="form-control" name="type" id="type" [(ngModel)]="newUser.contactType" name="type">
+      <option>Producers</option>
+      <option>Seller</option>
+      <option>Both</option>
+    </select>
+    <input class="form-control" type="text" placeholder="Domain" name="domain" [(ngModel)]="newUser.website" required>
+    <input class="form-control" type="text" placeholder="Mobile Number" [(ngModel)]="newUser.mobilePhone" required>
+    <input class="form-control" type="email" placeholder="Email" name="email" [(ngModel)]="newUser.email" required>
+    <input class="form-control" type="password" placeholder="Password" name="email" [(ngModel)]="newUser.password" required>
+    <select class="form-control" name="question">
+      <option>If you could be a character out of any novel, who would you be?</option>
+      <option>Who was your least favorite boss?</option>
+      <option>What is the name of your favorite relative not in the immediate family?</option>
+      <option>What was your childhood phone number?</option>
+      <option>What is the name of your favorite teacher?</option>
+      <option>Where do you want to retire?</option>
+      <option>What is your dream car?</option>
+      <option>If you won a million dollars, what is the most extravagant purchase you would make?</option>
+      <option>What is the name of your most memorable stuffed animal?</option>
+    </select>
+    <input class="form-control" type="text" placeholder="Answer" name="answer" [(ngModel)]="newUser.description">
+    <input type="submit" class="btn btn-primary btn-block" value="Register">
+  </form>
+</div>

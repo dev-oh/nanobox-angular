@@ -1,0 +1,188 @@
+<link rel="apple-touch-icon" sizes="60x60" href="../../../assets/svg/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../../assets/svg/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../../assets/svg/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../assets/svg/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../assets/svg/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/svg/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../assets/svg/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../assets/svg/favicons/favicon-16x16.png">
+<link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/1.13.0/css/okta-sign-in.min.css"
+      type="text/css" rel="stylesheet">
+<link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/1.13.0/css/okta-theme.css" type="text/css"
+      rel="stylesheet">
+
+<!-- OKTA PLUGIN WRAPPER -->
+<div class="login-wrapper" data-login>
+  <div class="login-text">
+    <h2>Already a <img src="../../../assets/svg/logo.svg" alt="Wine-oh">?</h2>
+    <p>Sign in to your Wine-Oh! account to access your wines, offers and other settings. If you don’t have a Wine-Oh!
+      account you can create one <a routerLink="sign-up">here</a>.</p>
+    <a href="https://wine-oh.io/features/">Learn more about Wine-Oh!</a>
+  </div>
+  <div id="okta-login-container">
+    <div data-se="auth-container" id="okta-sign-in" class="auth-container main-container no-beacon">
+      <div class="okta-sign-in-header auth-header"><img src="../../../assets/svg/logo.svg" class="auth-org-logo" alt="">
+        <div data-type="beacon-container" class="beacon-container"></div>
+      </div>
+      <div class="auth-content">
+        <div class="auth-content-inner">
+          <div class="primary-auth">
+            <form name="userform" method="post" #formCtrl="ngForm"
+                  id="form19" class="primary-auth-form o-form o-form-edit-mode">
+              <div data-se="o-form-content" class="o-form-content o-form-theme clearfix"><h2 data-se="o-form-head"
+                                                                                             class="okta-form-title o-form-head">
+                SignIn<span>to access your Wine-Oh! account</span></h2>
+                <div class="o-form-error-container" data-se="o-form-error-container"></div>
+                <div class="o-form-fieldset-container" data-se="o-form-fieldset-container">
+                  <div data-se="o-form-fieldset" class="o-form-fieldset o-form-label-top">
+                    <div data-se="o-form-input-container" class="o-form-input">
+                      <span data-se="o-form-input-username"
+                            class="o-form-input-name-username o-form-control okta-form-input-field input-fix">
+                        <span class="input-tooltip icon form-help-16" data-hasqtip="0"></span>
+                        <span class="icon input-icon person-16-gray"></span>
+                        <input type="text" placeholder="Email" aria-label="Email" name="email"
+                               id="okta-signin-username" value="" autocomplete="off" [(ngModel)]="user.email" required>
+                      </span>
+                    </div>
+                  </div>
+                  <div data-se="o-form-fieldset" class="o-form-fieldset o-form-label-top">
+                    <div data-se="o-form-input-container" class="o-form-input">
+                      <span data-se="o-form-input-password"
+                            class="o-form-input-name-password o-form-control okta-form-input-field input-fix">
+                        <span class="input-tooltip icon form-help-16" data-hasqtip="1"></span>
+                        <span class="icon input-icon remote-lock-16"></span>
+                        <input type="password" placeholder="Password" aria-label="Password" name="password"
+                               id="okta-signin-password" value="" autocomplete="off" [(ngModel)]="user.password"
+                               required>
+                      </span>
+                    </div>
+                  </div>
+                  <iframe name="iframe18" style="display:none"></iframe>
+                </div>
+              </div>
+              <div class="o-form-button-bar">
+                <Button class="button button-primary signin-btn" type="submit" value="Sign-In" id="okta-signin-submit"
+                        data-type="save" (click)="signInWithEmail()" [disabled]="formCtrl.form.invalid">SignIn
+                </Button>
+              </div>
+              <div class="socia-login">
+                <button type="button" class="btn-google-login btn btn-danger btn-block" (click)="loginWithGoogle()">
+
+                  <span class="google-button">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      width="25px" height="25px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <path style="fill:#FBBB00;" d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256
+                      c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456
+                      C103.821,274.792,107.225,292.797,113.47,309.408z"/>
+                    <path style="fill:#518EF8;" d="M507.527,208.176C510.467,223.662,512,239.655,512,256c0,18.328-1.927,36.206-5.598,53.451
+                      c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535
+                      c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"/>
+                    <path style="fill:#28B446;" d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512
+                      c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771
+                      c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z"/>
+                    <path style="fill:#F14336;" d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012
+                      c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0
+                      C318.115,0,375.068,22.126,419.404,58.936z"/>
+                  </svg>
+              </span>
+
+                  Sign-in with Google
+                </button>
+                <button type="button" class="btn-fb-login btn btn-primary btn-block facebook"
+                        (click)="loginWithFacebook()">
+                  <span class="google-button">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      width="25px" height="25px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <path style="fill:#1976D2;" d="M384,176h-96v-64c0-17.664,14.336-32,32-32h32V0h-64l0,0c-53.024,0-96,42.976-96,96v80h-64v80h64v256
+                      h96V256h64L384,176z"/>
+
+                    </svg>
+
+                  </span>
+                  Sign-in with Facebook
+                </button>
+                <button type="button" class="btn-fb-login btn btn-primary btn-block twitter"
+                        (click)="loginWithTwitter()">
+                  <span class="google-button">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      width="25px" height="25px" viewBox="0 0 511.537 511.537" style="enable-background:new 0 0 511.537 511.537;" xml:space="preserve">
+                        <path style="fill:#65BBF2;" d="M357.038,49.172c-59.284,0.898-105.993,52.098-105.993,111.382v14.372
+                        C145.052,156.063,92.954,127.319,35.466,67.137c-34.133,66.47,3.593,122.161,44.912,152.702c-27.846,0-51.2-3.593-69.165-19.761
+                        c-1.796-0.898-3.593,0-2.695,1.797c15.27,55.691,67.368,96.112,107.789,107.789c-36.828,0-61.081,5.389-87.13-10.779
+                        c-1.796-0.898-3.593,0-2.695,1.796c19.761,54.793,59.284,71.86,116.772,71.86c-28.744,21.558-67.368,43.116-140.126,44.912
+                        c-2.695,0-4.491,3.593-1.796,5.389c26.947,22.456,93.418,39.523,186.835,39.523c153.6,0,278.456-136.533,278.456-305.404v-8.982
+                        c24.253-8.982,37.726-30.54,44.912-52.098c0-0.898-0.898-1.796-1.797-1.796l-51.2,17.965c-0.898,0-1.796-1.796-0.898-2.695
+                        C479.2,92.288,495.368,70.73,502.554,50.07c0,0-0.898-0.898-1.797-0.898c-24.253,9.881-47.607,19.761-65.572,25.151
+                        c-2.695,0.898-6.288,0.898-8.982-0.898C414.526,67.137,379.494,49.172,357.038,49.172"/>
+                      </svg>
+
+                  </span>
+                  Sign-in with Twitter
+                </button>
+              </div>
+
+            </form>
+            <div class="auth-footer"><a href="#" data-se="needhelp" class="link help js-help"> Need help signing
+              in? </a>
+              <ul class="help-links js-help-links" style="display: none;">
+                <li><a href="#" data-se="forgot-password" class="link js-forgot-password"> Forgot password? </a></li>
+                <li><a routerLink="main/dashboard" class="link js-custom">Goto Homepage Instead</a></li>
+                <li><a href="https://help.wine-oh.io/hc/en-us/articles/115004120233-Need-Help-Signing-In-"
+                       data-se="help-link" class="link js-help-link" target="_blank"> Help </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END OKTA PLUGIN WRAPPER -->
+
+<!-- SCENE BLOCK -->
+<div class="scene-block" data-scene="night">
+
+  <!-- Sky images -->
+  <div class="sky" data-sky>
+    <img src="../../../assets/svg/night/bg.svg" alt="Wine-oh" class="night">
+    <img src="../../../assets/svg/morning/bg.svg" alt="Wine-oh" class="morning">
+  </div>
+
+  <!-- Sun image -->
+  <div class="sun" data-sun>
+    <img src="../../../assets/svg/morning/sun.svg" alt="Wine-oh" class="morning">
+  </div>
+
+  <!-- Mountains images -->
+  <div class="mountains" data-mount>
+    <img src="../../../assets/svg/night/mountain.svg" alt="Wine-oh" class="night">
+    <img src="../../../assets/svg/morning/mountain.svg" alt="Wine-oh" class="morning">
+  </div>
+
+  <!-- Clouds image -->
+  <div class="clouds" data-cloud>
+    <img src="../../../assets/svg/clouds.svg" alt="Wine-oh">
+  </div>
+
+  <!-- Blur image -->
+  <div class="blur" data-blur>
+    <img src="../../../assets/svg/blur.jpg" alt="Wine-oh">
+  </div>
+
+</div>
+<!-- END SCENE BLOCK -->
+
+<!-- MUSIC -->
+<audio class="page-audio js-pageAudioFirst" preload="auto">
+  <source src="../../../assets/audio/cork.mp3" type="audio/mpeg">
+  <source src="../../../assets/audio/cork.wav" type="audio/wav">
+</audio>
+<audio class="page-audio js-pageAudioSecond" preload="auto">
+  <source src="../../../assets/audio/pour.mp3" type="audio/mpeg">
+  <source src="../../../assets/audio/pour.wav" type="audio/wav">
+</audio>
+<audio class="page-audio js-pageAudioThird" preload="auto">
+  <source src="../../../assets/audio/rain.mp3" type="audio/mpeg">
+  <source src="../../../assets/audio/rain.wav" type="audio/wav">
+</audio>
+<!-- END MUSIC -->
